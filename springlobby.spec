@@ -3,7 +3,7 @@
 %define version	0.0.1.0735
 %define rel	1
 
-Summary:	Free cross-platform lobby client for the Spring RTS project
+Summary:	Cross-platform lobby client for the Spring RTS project
 Name:		%{name}
 Version:	%{version}
 Release:	%mkrel %{rel}
