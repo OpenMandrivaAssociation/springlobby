@@ -7,9 +7,8 @@ URL:		http://springlobby.info/
 Source:		http://www.springlobby.info/tarballs/springlobby-%{version}.tar.bz2
 Source1:	springlobby-logo.svg
 # The warning is showed unconditionally, even if we use wx2.8:
-#Patch0:		springlobby-0.0.1.0735-drop-wx2.6-warning.patch
 # Change default springdir from . to ~/.spring:
-Patch1:		springlobby-0.0.1.10367-default_springdir.patch
+Patch0:		springlobby-0.0.1.10367-default_springdir.patch
 # bundled springsettings is GPLv3+
 License:	GPL+ and GPLv3+
 BuildRoot:	%{_tmppath}/%{name}-root
@@ -18,6 +17,7 @@ BuildRequires:	SDL-devel
 BuildRequires:	SDL_sound-devel
 BuildRequires:	SDL_mixer-devel
 BuildRequires:	imagemagick
+BuildRequires:	desktop-file-utils
 Requires:	spring
 
 %description
@@ -29,8 +29,7 @@ tool.
 
 %prep
 %setup -q
-#patch0 -p1
-%patch1 -p1
+%patch0 -p1
 sed -i -e 's,Exec=springlobby,Exec=%{_gamesbindir}/%{name},g' src/springlobby.desktop
 sed -i -e 's,springlobby.svg,springlobby,g' src/springlobby.desktop
 
