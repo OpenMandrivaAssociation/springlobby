@@ -1,7 +1,7 @@
 Summary:	Cross-platform lobby client for the Spring RTS project
 Name:		springlobby
 Version:	0.0.1.10367
-Release:	%{mkrel 1}
+Release:	%{mkrel 2}
 Group:		Games/Strategy
 URL:		http://springlobby.info/
 Source:		http://www.springlobby.info/tarballs/springlobby-%{version}.tar.bz2
@@ -9,6 +9,9 @@ Source1:	springlobby-logo.svg
 # The warning is showed unconditionally, even if we use wx2.8:
 # Change default springdir from . to ~/.spring:
 Patch0:		springlobby-0.0.1.10367-default_springdir.patch
+# Create ~/.spring/base when downloading OTA content, if it doesn't
+# already exist - AdamW 2008/12
+Patch1:		springlobby-0.0.1.10367-create_basedir.patch
 # bundled springsettings is GPLv3+
 License:	GPL+ and GPLv3+
 BuildRoot:	%{_tmppath}/%{name}-root
@@ -30,6 +33,7 @@ tool.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 sed -i -e 's,Exec=springlobby,Exec=%{_gamesbindir}/%{name},g' src/springlobby.desktop
 sed -i -e 's,springlobby.svg,springlobby,g' src/springlobby.desktop
 
