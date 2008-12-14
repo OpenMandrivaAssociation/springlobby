@@ -6,16 +6,13 @@ Group:		Games/Strategy
 URL:		http://springlobby.info/
 Source:		http://www.springlobby.info/tarballs/springlobby-%{version}.tar.bz2
 Source1:	springlobby-logo.svg
-# The warning is showed unconditionally, even if we use wx2.8:
-# Change default springdir from . to ~/.spring:
-Patch0:		springlobby-0.0.1.10367-default_springdir.patch
 # Create ~/.spring/base when downloading OTA content, if it doesn't
 # already exist - AdamW 2008/12
-Patch1:		springlobby-0.0.1.10367-create_basedir.patch
+Patch0:		springlobby-0.0.1.10367-create_basedir.patch
 # Save auto-detected settings on first run: without this, detection
 # of Spring version fails until you hit Apply in Options / Spring
 # one time. Will be in next upstream release - AdamW 2008/12
-Patch2:		springlobby-0.0.1.10367-savesettings.patch
+Patch1:		springlobby-0.0.1.10367-savesettings.patch
 # bundled springsettings is GPLv3+
 License:	GPL+ and GPLv3+
 BuildRoot:	%{_tmppath}/%{name}-root
@@ -38,7 +35,6 @@ tool.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 sed -i -e 's,Exec=springlobby,Exec=%{_gamesbindir}/%{name},g' src/springlobby.desktop
 sed -i -e 's,springlobby.svg,springlobby,g' src/springlobby.desktop
 
