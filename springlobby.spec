@@ -1,21 +1,11 @@
 Summary:	Cross-platform lobby client for the Spring RTS project
 Name:		springlobby
-Version:	0.0.1.10367
-Release:	%{mkrel 7}
+Version:	0.0.1.10381
+Release:	%{mkrel 1}
 Group:		Games/Strategy
 URL:		http://springlobby.info/
 Source:		http://www.springlobby.info/tarballs/springlobby-%{version}.tar.bz2
 Source1:	springlobby-logo.svg
-# Create ~/.spring/base when downloading OTA content, if it doesn't
-# already exist - AdamW 2008/12
-Patch0:		springlobby-0.0.1.10367-create_basedir.patch
-# Save auto-detected settings on first run: without this, detection
-# of Spring version fails until you hit Apply in Options / Spring
-# one time. Will be in next upstream release - AdamW 2008/12
-Patch1:		springlobby-0.0.1.10367-savesettings.patch
-# Fix build with libtorrent-rasterbar 0.14.1 - from upstream - AdamW
-# 2008/12
-Patch2:		springlobby-0.0.1.10367-libtorrent14.patch
 # bundled springsettings is GPLv3+
 License:	GPL+ and GPLv3+
 BuildRoot:	%{_tmppath}/%{name}-root
@@ -37,9 +27,6 @@ tool.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
 sed -i -e 's,Exec=springlobby,Exec=%{_gamesbindir}/%{name},g' src/springlobby.desktop
 sed -i -e 's,springlobby.svg,springlobby,g' src/springlobby.desktop
 
