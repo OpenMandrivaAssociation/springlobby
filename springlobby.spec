@@ -1,7 +1,7 @@
 Summary:	Cross-platform lobby client for the Spring RTS project
 Name:		springlobby
-Version:	0.0.1.10467
-Release:	%mkrel 2
+Version:	0.3
+Release:	%mkrel 1
 Group:		Games/Strategy
 URL:		http://springlobby.info/
 Source:		http://www.springlobby.info/tarballs/springlobby-%{version}.tar.bz2
