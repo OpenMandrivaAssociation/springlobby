@@ -6,6 +6,7 @@ Group:		Games/Strategy
 URL:		http://springlobby.info/
 Source:		http://www.springlobby.info/tarballs/springlobby-%{version}.tar.bz2
 Source1:	springlobby-logo.svg
+Patch0:		springlobby-0.44-fix-WxLog.patch
 # bundled springsettings is GPLv3+
 License:	GPL+ and GPLv3+
 BuildRoot:	%{_tmppath}/%{name}-root
@@ -30,9 +31,10 @@ tool.
 %setup -q
 sed -i -e 's,Exec=springlobby,Exec=%{_gamesbindir}/%{name},g' src/springlobby.desktop
 sed -i -e 's,springlobby.svg,springlobby,g' src/springlobby.desktop
+%patch0 -p1
 
 %build
-%configure2_5x --bindir=%{_gamesbindir}
+%cmake
 %make
 
 %install
