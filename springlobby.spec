@@ -40,7 +40,7 @@ sed -i -e 's,springlobby.svg,springlobby,g' src/springlobby.desktop
 
 %install
 rm -rf %{buildroot}
-%makeinstall_std
+make -C build DESTDIR=%buildroot install
 
 desktop-file-install \
   --vendor="" \
@@ -86,10 +86,8 @@ rm -rf %{buildroot}
 %files -f %{name}.lang
 %defattr(-,root,root)
 %doc THANKS AUTHORS
-%{_gamesbindir}/springlobby
-%{_gamesbindir}/springsettings
+%{_bindir}/springlobby
+%{_bindir}/springsettings
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/applications/mandriva-springsettings.desktop
 %{_iconsdir}/hicolor/*/apps/*.*
-%{_datadir}/pixmaps/%{name}.svg
-
