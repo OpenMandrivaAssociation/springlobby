@@ -18,6 +18,7 @@ BuildRequires:	libtorrent-rasterbar-devel
 BuildRequires:	imagemagick
 BuildRequires:	desktop-file-utils
 BuildRequires:	boost-devel
+BuildRequires:	cmake
 Requires:	spring
 
 %description
