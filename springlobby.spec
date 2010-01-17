@@ -1,6 +1,6 @@
 Summary:	Cross-platform lobby client for the Spring RTS project
 Name:		springlobby
-Version:	0.44
+Version:	0.56
 Release:	%mkrel 1
 Group:		Games/Strategy
 URL:		http://springlobby.info/
@@ -19,7 +19,9 @@ BuildRequires:	imagemagick
 BuildRequires:	desktop-file-utils
 BuildRequires:	boost-devel
 BuildRequires:	cmake
+BuildRequires:	curl-devel
 Requires:	spring
+Requires:	curl
 
 %description
 SpringLobby is a free cross-platform lobby client for the Spring RTS
