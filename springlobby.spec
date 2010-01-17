@@ -20,8 +20,10 @@ BuildRequires:	desktop-file-utils
 BuildRequires:	boost-devel
 BuildRequires:	cmake
 BuildRequires:	curl-devel
+BuildRequires:	openal-devel
 Requires:	spring
 Requires:	curl
+Requires: 	openal
 
 %description
 SpringLobby is a free cross-platform lobby client for the Spring RTS
