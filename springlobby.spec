@@ -1,7 +1,7 @@
 Summary:	Cross-platform lobby client for the Spring RTS project
 Name:		springlobby
-Version:	0.59
-Release:	%mkrel 3
+Version:	0.63
+Release:	%mkrel 1
 Group:		Games/Strategy
 URL:		http://springlobby.info/
 Source:		http://www.springlobby.info/tarballs/springlobby-%{version}.tar.bz2
@@ -36,7 +36,7 @@ tool.
 %setup -q
 sed -i -e 's,Exec=springlobby,Exec=%{_gamesbindir}/%{name},g' src/springlobby.desktop
 sed -i -e 's,springlobby.svg,springlobby,g' src/springlobby.desktop
-%patch0 -p1
+#%patch0 -p1
 
 %build
 %cmake
