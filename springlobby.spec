@@ -2,15 +2,12 @@
 
 Summary:	Cross-platform lobby client for the Spring RTS project
 Name:		springlobby
-Version:	0.63
-Release:	%mkrel 3
+Version:	0.85
+Release:	%mkrel 1
 Group:		Games/Strategy
 URL:		http://springlobby.info/
 Source:		http://www.springlobby.info/tarballs/springlobby-%{version}.tar.bz2
 Source1:	springlobby-logo.svg
-# (cg) I tried to do this but it took too long so the whole check is diabled, but I leave the patch
-# incase someone wants to finish it off.
-Patch0:		springlobby-0.63-format-str.patch
 # bundled springsettings is GPLv3+
 License:	GPL+ and GPLv3+
 BuildRoot:	%{_tmppath}/%{name}-root
@@ -40,7 +37,6 @@ tool.
 %setup -q
 sed -i -e 's,Exec=springlobby,Exec=%{_gamesbindir}/%{name},g' src/springlobby.desktop
 sed -i -e 's,springlobby.svg,springlobby,g' src/springlobby.desktop
-%patch0 -p2
 
 %build
 %cmake
