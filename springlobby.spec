@@ -3,7 +3,7 @@
 Summary:	Cross-platform lobby client for the Spring RTS project
 Name:		springlobby
 Version:	0.85
-Release:	%mkrel 3
+Release:	%mkrel 4
 Group:		Games/Strategy
 URL:		http://springlobby.info/
 Source:		http://www.springlobby.info/tarballs/springlobby-%{version}.tar.bz2
@@ -22,6 +22,7 @@ BuildRequires:	boost-devel
 BuildRequires:	cmake
 BuildRequires:	curl-devel
 BuildRequires:	openal-devel
+BuildRequires:	libmpg123-devel
 Requires:	spring
 Requires:	curl
 Requires: 	openal
@@ -44,7 +45,7 @@ sed -i -e 's,springlobby.svg,springlobby,g' src/springlobby.desktop
 
 %install
 rm -rf %{buildroot}
-make -C build DESTDIR=%buildroot install
+%makeinstall_std -C build
 
 desktop-file-install \
   --vendor="" \
