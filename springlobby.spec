@@ -7,6 +7,7 @@ Release:	%mkrel 5
 Group:		Games/Strategy
 URL:		http://springlobby.info/
 Source:		http://www.springlobby.info/tarballs/springlobby-%{version}.tar.bz2
+Patch0:		springlobby-0.85-booost-1.46.patch
 Source1:	springlobby-logo.svg
 # bundled springsettings is GPLv3+
 License:	GPL+ and GPLv3+
@@ -36,6 +37,7 @@ tool.
 
 %prep
 %setup -q
+%patch0 -p0
 sed -i -e 's,Exec=springlobby,Exec=%{_gamesbindir}/%{name},g' src/springlobby.desktop
 sed -i -e 's,springlobby.svg,springlobby,g' src/springlobby.desktop
 
