@@ -1,0 +1,12 @@
+Index: CMakeLists.txt
+===================================================================
+--- CMakeLists.txt
++++ CMakeLists.txt	2012-10-09 15:07:50.302896383 +0200
+@@ -269,6 +269,7 @@
+ 
+ # Here the wxWidgets Libraries are added. These are set for us by the FIND Script. If you need other Libraries, you can add them here as well.
+ TARGET_LINK_LIBRARIES(springlobby ${wxWidgets_LIBRARIES} ${SL_BOOST_LIBS} )
++TARGET_LINK_LIBRARIES(springlobby pthread )
+ TARGET_LINK_LIBRARIES(springsettings ${wxWidgets_LIBRARIES} ${SL_BOOST_LIBS} )
+ 
+ IF(MINGW)
