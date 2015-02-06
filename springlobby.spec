@@ -3,7 +3,7 @@
 Summary:	Cross-platform lobby client for the Spring RTS project
 Name:		springlobby
 Version:	0.147
-Release:	2
+Release:	3
 Group:		Games/Strategy
 # bundled springsettings is GPLv3+
 License:	GPL+ and GPLv3+
