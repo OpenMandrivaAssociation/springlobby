@@ -7,7 +7,7 @@ Release:	3
 Group:		Games/Strategy
 # bundled springsettings is GPLv3+
 License:	GPL+ and GPLv3+
-URL:		http://springlobby.info/
+URL:		https://springlobby.info/
 Source:		http://www.springlobby.info/tarballs/springlobby-%{version}.tar.bz2
 Source1:	springlobby-logo.svg
 Patch0:		springlobby-lpthread.patch
